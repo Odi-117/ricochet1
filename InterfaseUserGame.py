@@ -33,8 +33,8 @@ class WorkWithUser:
             return False
 
     def check_text_char(self, text):
-        characters = """ABCDEFGHIKLMNOPQRSTVXYZ
-            abcdefghiklmnopqrstvxyz1234567890"""
+        characters = """ABCDEFGHIKLMNOPQRSTUVWXYZ
+            abcdefghiklmnopqrstuvwxyz1234567890"""
         for i in text:
             find = False
             for j in characters:
