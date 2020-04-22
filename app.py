@@ -110,7 +110,7 @@ def delete_account():
 
 @app.route("/check_actuale_app", methods = ["POST"])
 def check_actuale_app():
-	key = int(os.environ.get('KEY_APP'))
+	key = os.environ.get('KEY_APP')
 	if request.method == "POST":
 		if key == request.headers.get("Key-App"):
 			return "True"
