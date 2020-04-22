@@ -108,13 +108,22 @@ def delete_account():
 
 		return str(user.delete_user(login, password))
 
+@app.route("/check_actuale_app", methods = ["POST"])
+def check_actuale_app():
+	key = int(os.environ.get('KEY_APP'))
+	if request.method == "POST":
+		if key == request.headers.get("Key-App"):
+			return "True"
+		else:
+			return "False"
+	
 @app.route("/test", methods = ["GET"])
 def testConnect():
 	if request.method == "GET":
 		return "True"
 	else:
 		return "False"
-
+	
 if __name__ == '__main__':
     PORT = int(os.environ.get('PORT'))
     app.run(host="localhost", port=PORT)
